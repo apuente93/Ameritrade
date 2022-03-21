@@ -19,6 +19,7 @@ public class Coin {
 	@GeneratedValue(
 			strategy = GenerationType.SEQUENCE,
 			generator = "coin_sequence")
+	
 	private Long id;
 	private String name;
 	private String description;
@@ -34,7 +35,7 @@ public class Coin {
 	 */
 	public Coin() {
 	}
-
+	
 	/**
 	 * @param id
 	 * @param name
@@ -80,11 +81,11 @@ public class Coin {
 		this.mintable = mintable;
 		this.ercToken = ercToken;
 	}
-
+	
 	public Long getId() {
 		return id;
 	}
-
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
