@@ -1,4 +1,4 @@
-package com.example.demo.coin;
+package com.example.demo.stock;
 
 import java.util.List;
 
@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "api/v1/coin")
-public class CoinController {
+@RequestMapping(path = "api/v1/stock")
+public class StockController {
 	
-	private final CoinService coinService;
+	private final StockService stockService;
 	
 	@Autowired
-	public CoinController(CoinService coinService) {
-		this.coinService = coinService;
+	public StockController(StockService stockService) {
+		this.stockService = stockService;
 	}
 	
 	@GetMapping
-	public List<Coin> getCoins(){
-		return this.coinService.getCoins();
+	public List<Stock> getStocks(){
+		return this.stockService.getStocks();
 	}
 }

@@ -1,8 +1,8 @@
-package com.example.demo.coin;
+package com.example.demo.stock;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CoinRepository extends JpaRepository<Coin, Long> {
+public interface StockRepository extends JpaRepository<Stock, Long> {
 }
