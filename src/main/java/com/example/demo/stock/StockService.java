@@ -1,6 +1,7 @@
 package com.example.demo.stock;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,16 @@ public class StockService {
 	@GetMapping
 	public List<Stock> getStocks(){
 		return this.stockRepository.findAll();
+	}
+
+	public void addStock(Stock stock) {
+		
+		Optional<Stock> stockByTicker = this.stockRepository.findByTicker(stock.getTicker());
+		
+		if (stockByTicker.isPresent()) {
+			throw new IllegalStateException("ticker already exists.");
+		}
+			
+		this.stockRepository.save(stock);
 	}
 }
