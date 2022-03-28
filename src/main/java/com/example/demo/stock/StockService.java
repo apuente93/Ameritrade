@@ -32,4 +32,13 @@ public class StockService {
 			
 		this.stockRepository.save(stock);
 	}
+
+	public void deleteStock(Long id) {
+		boolean exists = this.stockRepository.existsById(id);
+		
+		if (!exists) {
+			throw new IllegalStateException("id " + id + " does not exist.");
+		}
+		this.stockRepository.deleteById(id);
+	}
 }
